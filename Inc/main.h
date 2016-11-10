@@ -41,24 +41,14 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define NRF_CE_Pin GPIO_PIN_8
-#define NRF_CE_GPIO_Port GPIOB
 #define BAT_SENS_Pin GPIO_PIN_0
 #define BAT_SENS_GPIO_Port GPIOA
 #define GYRO_CS_Pin GPIO_PIN_1
 #define GYRO_CS_GPIO_Port GPIOA
-#define NRF_IRQ_Pin GPIO_PIN_2
-#define NRF_IRQ_GPIO_Port GPIOA
-#define LED_G_Pin GPIO_PIN_3
-#define LED_G_GPIO_Port GPIOA
 #define ACC_M_CS_Pin GPIO_PIN_4
 #define ACC_M_CS_GPIO_Port GPIOA
 #define NRF_CSN_Pin GPIO_PIN_1
 #define NRF_CSN_GPIO_Port GPIOB
-#define GYRO_DR_INT_Pin GPIO_PIN_9
-#define GYRO_DR_INT_GPIO_Port GPIOA
-#define ACC_INT1_Pin GPIO_PIN_10
-#define ACC_INT1_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

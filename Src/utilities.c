@@ -173,8 +173,8 @@ uint8_t SPIReadByte(uint8_t registerAddress, uint8_t *data)
     uint8_t bufferTx[2] = {registerAddress, 0xff};
     uint8_t bufferRx[2] = {0xff};
     HAL_GPIO_WritePin(SPIx_CSN_GPIO_PORT, SPIx_CSN_PIN, LOW);
-//    HAL_SPI_TransmitReceive_DMA(&hspi1, (uint8_t *)bufferTx, (uint8_t *)bufferRx, 2);
-    HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)bufferTx, (uint8_t *)bufferRx, 2, 1000);
+    HAL_SPI_TransmitReceive_DMA(&hspi1, (uint8_t *)bufferTx, (uint8_t *)bufferRx, 2);
+//    HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)bufferTx, (uint8_t *)bufferRx, 2, 1000);
     while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY)
         ;
     HAL_GPIO_WritePin(SPIx_CSN_GPIO_PORT, SPIx_CSN_PIN, HIGH);

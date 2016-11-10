@@ -1,3 +1,6 @@
+# Prerequisites
+*.d
+
 # Object files
 *.o
 *.ko
@@ -81,3 +84,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Debug/

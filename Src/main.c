@@ -81,24 +81,27 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC_Init();
   MX_SPI1_Init();
   MX_TIM17_Init();
+  MX_ADC_Init();
 
   /* USER CODE BEGIN 2 */
   ce(LOW);
   csn(HIGH);
+  HAL_GPIO_WritePin(GYRO_CS_GPIO_Port, GYRO_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(ACC_M_CS_GPIO_Port, ACC_M_CS_Pin, GPIO_PIN_SET);
   HAL_ADC_Start_DMA(&hadc, &battery, 1);
   HAL_TIM_Base_Start_IT(&htim17);
-  uint8_t ret = readRadioRegister(STATUS);
-//  initRadio();
+  initRadio();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  uint8_t ret = readRadioRegister(STATUS);
 	  delayMicroseconds(ret);
+
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -118,9 +121,11 @@ void SystemClock_Config(void)
 
     /**Initializes the CPU, AHB and APB busses clocks 
     */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI14|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSI14State = RCC_HSI14_ON;
+  RCC_OscInitStruct.HSI14CalibrationValue = 16;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;

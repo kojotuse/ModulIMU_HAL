@@ -60,44 +60,44 @@
 #define TYPE_NEW_ROBOT                          0xF0
 #define TYPE_REBOOT_ROBOT                       0xFF
   
-/*
-  DELAY TIMER DECLARATIONS
-*/
-#define MICRO_TIM                               TIM7
-#define MICRO_FREQ                              100
-#define MICRO_CLK                               1000000
-#define MICRO_PERIOD                            (uint32_t)(MICRO_CLK/MICRO_FREQ)  /* Period Value  */
-#define MICRO_TIM_CLK_ENABLE()                  __HAL_RCC_TIM7_CLK_ENABLE();
-#define MICRO_IRQn                              TIM7_IRQn
-#define MICRO_IRQHandler                        TIM7_IRQHandler
-#define MICRO_IRQ_PRIORITY                      0 //3->0
-/*
-  LED DECLARATIONS
-*/
-#define LED_REDBLUE_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()
-#define LED_GREEN_GPIO_CLK_ENABLE()             __HAL_RCC_GPIOA_CLK_ENABLE()
-
-#define RED_PIN					GPIO_PIN_1
-#define RED_GPIO_PORT                           GPIOB
-#define GREEN_PIN				GPIO_PIN_7
-#define GREEN_GPIO_PORT                         GPIOA
-#define BLUE_PIN				GPIO_PIN_0
-#define BLUE_GPIO_PORT                          GPIOB
-
-#define STATUS_PIN                              GPIO_PIN_6
-#define STATUS_GPIO_PORT                        GPIOA
-
-#define RGB_TIM					TIM3
-#define RGB_FREQ				10000
-#define RGB_CLK					1000000
-#define RGB_PERIOD				(uint32_t)(RGB_CLK/RGB_FREQ)  /* Period Value  */
-#define BLINK_FREQUENCY                         10
-#define BLINK_PERIOD                            (uint32_t)(500/BLINK_FREQUENCY)
-#define GREEN_CHANNEL				TIM_CHANNEL_2
-#define RED_CHANNEL				TIM_CHANNEL_4
-#define BLUE_CHANNEL				TIM_CHANNEL_3
-#define STATUS_CHANNEL				TIM_CHANNEL_1
-#define RGB_CLK_ENABLE()                        __HAL_RCC_TIM3_CLK_ENABLE()
+///*
+//  DELAY TIMER DECLARATIONS
+//*/
+//#define MICRO_TIM                               TIM7
+//#define MICRO_FREQ                              100
+//#define MICRO_CLK                               1000000
+//#define MICRO_PERIOD                            (uint32_t)(MICRO_CLK/MICRO_FREQ)  /* Period Value  */
+//#define MICRO_TIM_CLK_ENABLE()                  __HAL_RCC_TIM7_CLK_ENABLE();
+//#define MICRO_IRQn                              TIM7_IRQn
+//#define MICRO_IRQHandler                        TIM7_IRQHandler
+//#define MICRO_IRQ_PRIORITY                      0 //3->0
+///*
+//  LED DECLARATIONS
+//*/
+//#define LED_REDBLUE_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()
+//#define LED_GREEN_GPIO_CLK_ENABLE()             __HAL_RCC_GPIOA_CLK_ENABLE()
+//
+//#define RED_PIN					GPIO_PIN_1
+//#define RED_GPIO_PORT                           GPIOB
+//#define GREEN_PIN				GPIO_PIN_7
+//#define GREEN_GPIO_PORT                         GPIOA
+//#define BLUE_PIN				GPIO_PIN_0
+//#define BLUE_GPIO_PORT                          GPIOB
+//
+//#define STATUS_PIN                              GPIO_PIN_6
+//#define STATUS_GPIO_PORT                        GPIOA
+//
+//#define RGB_TIM					TIM3
+//#define RGB_FREQ				10000
+//#define RGB_CLK					1000000
+//#define RGB_PERIOD				(uint32_t)(RGB_CLK/RGB_FREQ)  /* Period Value  */
+//#define BLINK_FREQUENCY                         10
+//#define BLINK_PERIOD                            (uint32_t)(500/BLINK_FREQUENCY)
+//#define GREEN_CHANNEL				TIM_CHANNEL_2
+//#define RED_CHANNEL				TIM_CHANNEL_4
+//#define BLUE_CHANNEL				TIM_CHANNEL_3
+//#define STATUS_CHANNEL				TIM_CHANNEL_1
+//#define RGB_CLK_ENABLE()                        __HAL_RCC_TIM3_CLK_ENABLE()
 
 /*
   RADIO DECLARATIONS
