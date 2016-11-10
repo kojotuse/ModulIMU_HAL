@@ -30,6 +30,8 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
+*.elf
 
 # Debug files
 *.dSYM/
@@ -84,6 +86,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-/Debug
-/Debug/*
+
 
