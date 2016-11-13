@@ -92,6 +92,8 @@ int main(void)
   HAL_GPIO_WritePin(ACC_M_CS_GPIO_Port, ACC_M_CS_Pin, GPIO_PIN_SET);
   HAL_ADC_Start_DMA(&hadc, &battery, 1);
   HAL_TIM_Base_Start_IT(&htim17);
+  uint8_t ret = readRadioRegister(STATUS);
+  initRadio();
   initRadio();
   /* USER CODE END 2 */
 

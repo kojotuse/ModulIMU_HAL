@@ -88,4 +88,5 @@ $RECYCLE.BIN/
 *.lnk
 
 
-/Debug/
+Debug/
+Debug/*
