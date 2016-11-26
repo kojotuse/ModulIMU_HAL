@@ -93,16 +93,22 @@ int main(void)
   HAL_ADC_Start_DMA(&hadc, &battery, 1);
   HAL_TIM_Base_Start_IT(&htim17);
   uint8_t ret = readRadioRegister(STATUS);
+  uint8_t address[10] = {0};
   initRadio();
   initRadio();
+  stopListening();
+  uint8_t data[]= {1,2,3,4,5,6,7,8};
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  uint8_t ret = readRadioRegister(STATUS);
-	  delayMicroseconds(ret);
+//	  uint8_t ret = readRadioRegister(STATUS);
+	  startWrite(data, 8);
+	  delayMicroseconds(1000000);
+//	  ret = readRadioRegister(STATUS);
+//	  readRadioRegisters(TX_ADDR, address, 8);
 
   /* USER CODE END WHILE */
 

@@ -111,7 +111,8 @@ uint8_t SPIWriteRegisters(uint8_t registerAddress, uint8_t length, uint8_t *data
     bufferTx[0] = registerAddress;
 
 //    memcpy_fast((uint8_t *)&bufferTx[1], (uint8_t *)data, length);
-    memcpy((uint8_t *)&bufferTx[1], (uint8_t *)data, length);
+//    memcpy((uint8_t *)&bufferTx[1], (uint8_t *)data, length);
+    memcpy(&bufferTx[1], data, length);
 
     HAL_GPIO_WritePin(SPIx_CSN_GPIO_PORT, SPIx_CSN_PIN, LOW);
     HAL_SPI_TransmitReceive_DMA(&hspi1, (uint8_t *)bufferTx, (uint8_t *)bufferRx, length + 1);

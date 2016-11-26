@@ -24,9 +24,10 @@ bool initRadio()
 //                debug_printf("RF successfully initialized, configuring...\n");
 
             initOK &= setChannel(RADIO_CHANNEL);
-            initOK &= setAutoAck(true);
-            initOK &= setDataRate(RF24_2MBPS);
-            initOK &= enableAckPayload();
+//            initOK &= setAutoAck(true);
+            initOK &= setAutoAck(false);
+            initOK &= setDataRate(RF24_1MBPS);
+//            initOK &= enableAckPayload();
 
 //            if (DEBUG_ENABLED() && initOK)
 //            {
@@ -35,8 +36,8 @@ bool initRadio()
 //            }
 
             openWritingPipe(DEFAULT_ADDRESS);
-            openReadingPipe(1, DEFAULT_ADDRESS);
-            startListening();
+//            openReadingPipe(1, DEFAULT_ADDRESS);
+//            startListening();
 
             isRadioInitialized = true;
         }
